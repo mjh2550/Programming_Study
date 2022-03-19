@@ -30,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
          * 뷰 바인드 , MVVM 실습
          */
         //setContentView(R.layout.activity_main);
-        datac= new Datac();
+
+       /* datac= new Datac();
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         activityMainBinding.setActVar(datac);
-        activityMainBinding.setLifecycleOwner(this);
+        activityMainBinding.setLifecycleOwner(this);*/
+
       /*  activityMainBinding.btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
 
-        UserDatabase userDatabase = Room.databaseBuilder(getApplicationContext(), UserDatabase.class , "User_DB")
+      /*  UserDatabase userDatabase = Room.databaseBuilder(getApplicationContext(), UserDatabase.class , "User_DB")
                 .fallbackToDestructiveMigration() //스키마 (Database)버전 변경 가능
                 .allowMainThreadQueries()   //Main Thread에서 DB IO(입출력) 가능하게 함
                 .build();
@@ -71,6 +73,6 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0 ; i<userList.size() ; i++){
             Log.d("TEST", userList.get(i).getName());
         }
-
+*/
     }
 }

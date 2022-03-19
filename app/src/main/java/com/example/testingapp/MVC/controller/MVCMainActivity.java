@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class MVCMainActivity extends AppCompatActivity implements MVCMainViewHolder.HolderClickListener{
 
-
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     MVCMainAdapter adapter;

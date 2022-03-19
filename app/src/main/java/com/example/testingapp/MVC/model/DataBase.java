@@ -8,7 +8,7 @@ public class DataBase {
     private DatabaseListener databaseListener;
 
     private DataBase(){
-        for (int index=0; index<100; index++){
+        for (int index=0; index<10; index++){
             personArrayList.add(new Person(index, String.format("JH%d",index)));
         }
     }

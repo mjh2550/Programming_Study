@@ -1,7 +1,7 @@
 package com.example.testingapp.MVC.model;
 
 public class Person {
-    private int id ;
+    private long id ;
     private String name;
 
     public Person(long id, String name) {
@@ -9,11 +9,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
