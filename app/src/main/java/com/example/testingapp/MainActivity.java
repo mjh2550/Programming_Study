@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.testingapp.databinding.ActivityMainBinding;
 import com.example.testingapp.roomdb.User;
 import com.example.testingapp.roomdb.UserDao;
 import com.example.testingapp.roomdb.UserDatabase;
+import com.example.testingapp.sqlite.SqlMainActivity;
 
 import java.util.List;
 
@@ -74,5 +76,11 @@ public class MainActivity extends AppCompatActivity {
             Log.d("TEST", userList.get(i).getName());
         }
 */
+
+        /**
+         * SqLite DB Connect
+         */
+
+
     }
 }
