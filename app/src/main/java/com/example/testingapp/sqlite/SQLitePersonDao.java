@@ -1,13 +1,24 @@
 package com.example.testingapp.sqlite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 public class SQLitePersonDao {
 
     static final String dbName = "person_db";
     static final String tbName = "person_tb";
     Context context;
+
+    /**
+     * %d 정수
+     * %f 실수
+     * %c 문자
+     * %s 문자열
+     */
 
 
     public SQLitePersonDao(Context context){
@@ -28,6 +39,42 @@ public class SQLitePersonDao {
         return db;
     }
 
+    public ArrayList<PersonVo> selectList(){
+        ArrayList<PersonVo> selectList = new ArrayList<PersonVo>();
+
+        //Cursor
+        Cursor cursor = null;
+        SQLiteDatabase db = null;
+
+
+        String [] col_names = {"idx","name","tel"};
+        try {
+            db = getDatabase();
+            cursor = db.query(tbName,col_names,null,null,null,null,null);
+
+            if(cursor!=null){
+                if(cursor.moveToFirst()){//첫번째 레코드
+                    //다음 레코드없을 때 까지 while문 돌림
+
+                    do {
+                        int idx = cursor.getInt(0);
+                        String name = cursor.getString(0);
+                        String tel = cursor.getString(0);
+
+                        //vo포장 후 ArrayList넣기
+                        selectList.add(new PersonVo(idx,name,tel));
+                    }while (cursor.moveToNext());
+
+                }
+            }
+        }catch (Exception e){
+            Log.d("Error",e.getMessage());
+        }finally {
+            db.close();
+        }
+        return selectList;
+    }
+
 
     //Insert
     public int insert(PersonVo vo){
@@ -42,7 +89,7 @@ public class SQLitePersonDao {
             res = 1;
 
         }catch (Exception e){
-
+            Log.e("Error", e.getMessage());
         }finally {
             //db가 생성 되었다면 닫아줘야함
             if(db!=null) db.close();
@@ -51,10 +98,45 @@ public class SQLitePersonDao {
     }
 
     //Update
-    //TODO Update
+    public int Update(PersonVo vo){
+        int res = 0;
+        SQLiteDatabase db = null;
+        try {
+            db = getDatabase();
+            String sql = String.format("update %s set name = '%s' , tel = '%s' " +
+                                        "where idx = '%s' "
+                                        ,tbName,vo.getName(),vo.getTel(),vo.getIdx());
+
+            db.execSQL(sql);
+            res=1;
+        }catch (Exception e){
+            Log.e("Error",e.getMessage());
+        }finally {
+            db.close();
+        }
+        return res;
+    }
+
 
     //DELETE
-    //TODO DELETE
+    public int Delete(PersonVo vo){
+        int res = 0;
+        SQLiteDatabase db = null;
+        try {
+            db = getDatabase();
+            String sql = String.format("Delete from %s " +
+                                        "where idx = '%s'"
+                                        ,tbName,vo.getIdx());
+
+            db.execSQL(sql);
+            res=1;
+        }catch (Exception e){
+            Log.e("Error",e.getMessage());
+        }finally {
+            db.close();
+        }
+        return res;
+    }
 
 
 }
