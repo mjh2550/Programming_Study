@@ -22,27 +22,21 @@ class MainActivity : AppCompatActivity() {
 
         manager = CardStackLayoutManager(baseContext, object : CardStackListener{
             override fun onCardDragging(direction: Direction?, ratio: Float) {
-                TODO("Not yet implemented")
             }
 
             override fun onCardSwiped(direction: Direction?) {
-                TODO("Not yet implemented")
             }
 
             override fun onCardRewound() {
-                TODO("Not yet implemented")
             }
 
             override fun onCardCanceled() {
-                TODO("Not yet implemented")
             }
 
             override fun onCardAppeared(view: View?, position: Int) {
-                TODO("Not yet implemented")
             }
 
             override fun onCardDisappeared(view: View?, position: Int) {
-                TODO("Not yet implemented")
             }
         })
 

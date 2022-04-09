@@ -23,13 +23,11 @@ class CardStackAdapter(val context : Context, val items : List<String>) : Recycl
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
         holder.binding(items[position])
 
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
         return items.size
     }
 
