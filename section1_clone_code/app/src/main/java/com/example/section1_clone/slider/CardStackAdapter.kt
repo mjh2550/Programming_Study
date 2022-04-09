@@ -1,37 +1,36 @@
-package com.bokchi.sogating_final.slider
+package com.example.section1_clone.slider
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bokchi.sogating_final.R
+import com.example.section1_clone.R
 
 class CardStackAdapter(val context : Context, val items : List<String>) : RecyclerView.Adapter<CardStackAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardStackAdapter.ViewHolder {
 
-        val inflater = LayoutInflater.from(parent.context)
-        val view : View = inflater.inflate(R.layout.item_card, parent, false)
-        return ViewHolder(view)
+    inner class ViewHolder(itemView : View) :RecyclerView.ViewHolder(itemView){
+        fun binding(data : String){
 
+        }
     }
 
-    override fun onBindViewHolder(holder: CardStackAdapter.ViewHolder, position: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewTyrpe: Int): ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view : View =inflater.inflate(R.layout.item_card , parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        TODO("Not yet implemented")
         holder.binding(items[position])
+
     }
 
     override fun getItemCount(): Int {
+        TODO("Not yet implemented")
         return items.size
     }
-
-    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-
-        fun binding(data : String) {
-
-        }
-
-    }
-
 
 }
