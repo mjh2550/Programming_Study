@@ -16,23 +16,29 @@ class IntroActivity : AppCompatActivity() {
         val btn_01 : Button = findViewById(R.id.btn_01)
         val btn_02 : Button = findViewById(R.id.btn_02)
 
-        btn_01.setOnClickListener(ButtonListener01())
+//        btn_01.setOnClickListener(ButtonListener01())
+
+        btn_01.setOnClickListener{
+            val intent = Intent(this, JoinActivity::class.java)
+            startActivity(intent)
+        }
         btn_02.setOnClickListener(ButtonListener02())
 
 
 
 
     }
-    inner class ButtonListener01 : View.OnClickListener {
-        override fun onClick(v: View?) {
-            val intent = Intent(this@IntroActivity,MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
+//    inner class ButtonListener01 : View.OnClickListener {
+//        override fun onClick(v: View?) {
+//            val intent = Intent(this@IntroActivity,MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 
     inner class ButtonListener02 : View.OnClickListener {
         override fun onClick(v: View?) {
-            
+            val intent = Intent(this@IntroActivity,MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

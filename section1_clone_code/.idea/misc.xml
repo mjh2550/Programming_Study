@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ezcaretech/Desktop/mjh/programming_study/section1_clone_code/app/src/main/res/layout/activity_intro.xml" value="0.1875" />
+        <entry key="..\:/Users/ezcaretech/Desktop/mjh/programming_study/section1_clone_code/app/src/main/res/layout/activity_join.xml" value="0.25" />
+        <entry key="..\:/Users/ezcaretech/Desktop/mjh/programming_study/section1_clone_code/app/src/main/res/layout/activity_main.xml" value="0.21875" />
+        <entry key="..\:/Users/ezcaretech/Desktop/mjh/programming_study/section1_clone_code/app/src/main/res/layout/activity_splash.xml" value="0.21875" />
+        <entry key="..\:/Users/ezcaretech/Desktop/mjh/programming_study/section1_clone_code/app/src/main/res/layout/item_card.xml" value="0.21875" />
         <entry key="..\:/dev/inflearn_kotlin/section1_clone_code/app/src/main/res/layout/activity_intro.xml" value="0.1" />
         <entry key="..\:/dev/inflearn_kotlin/section1_clone_code/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/dev/inflearn_kotlin/section1_clone_code/app/src/main/res/layout/activity_splash.xml" value="0.264" />
