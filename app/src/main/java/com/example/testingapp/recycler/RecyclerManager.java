@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,19 @@ public class RecyclerManager extends RecyclerView.Adapter<RecyclerManager.ViewHo
             super(itemView);
 
             tv = itemView.findViewById(R.id.textView);
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(itemView.getContext(),
+                            "롱클릭", Toast.LENGTH_SHORT).show();
+                    int position = getAdapterPosition();
+
+
+                    return true;
+                }
+            });
         }
     }
 
