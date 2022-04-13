@@ -1,10 +1,21 @@
 package com.example.testingapp.sqlite;
 
-public class PersonVo {
+import java.io.Serializable;
+
+public class PersonVo implements Serializable {
 
     private int Idx;
     private String name;
     private String tel;
+
+    public PersonVo() {
+    }
+
+    public PersonVo(int idx, String name, String tel) {
+        Idx = idx;
+        this.name = name;
+        this.tel = tel;
+    }
 
     public int getIdx() {
         return Idx;
