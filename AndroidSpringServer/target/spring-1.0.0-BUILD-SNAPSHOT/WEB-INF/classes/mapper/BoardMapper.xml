@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- <mapper namespace="com.android.spring.mapper.BoardMapper"> -->
+<mapper namespace="com.android.spring.dao.BoardDAO">
+		
+		
+			
+	<!-- 전체 내용 조회 -->
+	<select id="viewAll" resultType="com.android.spring.domain.BoardVO">
+	  SELECT * FROM board ORDER BY SEQ DESC
+	</select>
+	
+ 	<!--전체 내용 조회 : 앱 api  -->
+ 	<resultMap type="HashMap" id="appviewAllmap">
+	<id column="SEQ" property="SEQ"/> 
+	<id column="TITLE" property="TITLE"/>
+	<id column="WRITER" property="WRITER"/>
+	<id column="CONTENT" property="CONTENT"/>
+	<id column="REGDATE" property="REGDATE"/>
+	<id column="CNT" property="CNT"/>
+ 	</resultMap>
+	<select id="appviewAll" resultMap="appviewAllmap">
+	  SELECT SEQ,TITLE,WRITER,CONTENT,TO_CHAR(REGDATE, 'YYYY-MM-DD HH24:MI:SS') AS REGDATE, CNT FROM board ORDER BY SEQ DESC
+	</select>
+	
+	<insert id="insertPro" parameterType="com.android.spring.domain.BoardVO" >
+	<![CDATA[
+	  INSERT INTO board values ((SELECT MAX(SEQ) FROM board)+1,#{title},#{writer},#{content},to_date(sysdate,'YY.MM.DD'),#{cnt})
+	]]></insert>
+	
+	<insert id="insertUpload" parameterType="com.android.spring.domain.FileBoardVO" >
+	<![CDATA[
+	  INSERT INTO fileboard values ((SELECT MAX(num) FROM fileboard)+1,'admin','Test',#{uploadFileName},#{filePath},to_char(sysdate,'YYYY-MM-DD'),'Y')
+	]]></insert>
+	
+
+	<!-- insert into fileboard values(file_num.nextval,'비발디', '사계-봄', 'file.jpeg','C:\\testfolder',to_char(sysdate,'YYYY-MM-DD')); -->
+	<!-- id시퀀스 -->
+	<!-- create sequence file_num
+	start with 1
+	increment by 1; -->
+	
+	<!-- 페이징 처리 후 게시글 조회  :appboard-->
+	<select id="selectAppBoard" resultType="com.android.spring.domain.FileBoardVO">
+		SELECT * 
+			FROM (
+				SELECT ROWNUM RN, A.* 
+					FROM (
+							SELECT * 
+							FROM fileboard 
+							ORDER BY num DESC 
+							) A
+					)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+		<!-- 총 게시글 갯수 출력 -->
+	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM BOARD
+	</select>
+	
+		<!-- 총 게시글 갯수 출력 -->
+	<select id="countAppBoard" resultType="int">
+		SELECT COUNT(*) FROM fileboard
+	</select>
+	
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="selectBoard" resultType="com.android.spring.domain.BoardVO">
+		SELECT * 
+			FROM (
+				SELECT ROWNUM RN, A.* 
+					FROM (
+							SELECT * 
+							FROM BOARD 
+							ORDER BY SEQ DESC 
+							) A
+					)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="viewDetail" resultType="com.android.spring.domain.BoardVO" parameterType="int">
+	  SELECT * FROM board WHERE SEQ = #{seq}
+	</select>
+	
+	<update id="incCnt"  parameterType="int">
+	UPDATE board SET cnt = cnt+1 WHERE seq = #{seq}
+	</update>
+	
+		<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM BOARD WHERE SEQ = #{seq}
+	</delete>
+	
+		<!-- 게시글 수정 -->
+	<update id="updateBoard" parameterType="com.android.spring.domain.BoardVO">
+		UPDATE BOARD SET TITLE = #{title}, CONTENT = #{content} WHERE SEQ = #{seq}
+	</update>
+</mapper>
