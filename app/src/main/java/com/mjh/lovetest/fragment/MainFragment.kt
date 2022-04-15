@@ -24,13 +24,14 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-    //view 가 만들어지고 나서
+    //view 가 만들어지고 나서 호출되는 함수
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
-        btn_next.setOnClickListener { 
-            navController.navigate(R.id.action_mainFragment_to_questionFragment)//네비게이션 설정 액션 바인딩하여 navigate 시킴
+        btn_next.setOnClickListener {
+            //네비게이션 설정 액션 바인딩하여 navigate 시킴
+            navController.navigate(R.id.action_mainFragment_to_questionFragment)
         }
 
 
