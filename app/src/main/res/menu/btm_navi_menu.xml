@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/notepad"
+        android:title="홈"/>
+    <item
+        android:id="@+id/infoFragment"
+        android:enabled="true"
+        android:icon="@drawable/exercise"
+        android:title="연습" />
+    <item
+        android:id="@+id/resultFragment"
+        android:enabled="true"
+        android:icon="@drawable/refresh"
+        android:title="새로고침" />
+    <item
+        android:id="@+id/settingFragment"
+        android:enabled="true"
+        android:icon="@drawable/results"
+        android:title="결과" />
+</menu>

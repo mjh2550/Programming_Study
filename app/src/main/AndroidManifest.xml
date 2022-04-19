@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestingApp">
         <activity
-            android:name=".recycler.RecycleActivity"
+            android:name=".kotlin.MainKtActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".recycler.RecycleActivity"
+            android:exported="true">
 
         </activity>
         <activity
@@ -27,9 +31,7 @@
             android:exported="true" />
         <activity
             android:name=".sqlite.SqlMainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MVC.controller.MVCMainActivity"
             android:exported="true">

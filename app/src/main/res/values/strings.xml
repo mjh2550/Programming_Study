@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TestingApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info_text_01"> 다음 화면으로 가려면 누르시오</string>
+
 </resources>
