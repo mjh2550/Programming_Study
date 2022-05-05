@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestingApp">
         <activity
-            android:name=".kotlin.MainKtActivity"
+            android:name=".kotlin.mvvm.MainMvvmActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".recycler.RecycleActivity"
+            android:name=".kotlin.MainKtActivity"
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".recycler.RecycleActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".sqlite.SqlUpdateActivity"
             android:exported="true" />
@@ -31,7 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".sqlite.SqlMainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MVC.controller.MVCMainActivity"
             android:exported="true">

@@ -20,6 +20,7 @@
         <entry key="..\:/dev/etc/book/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/dev/etc/book/app/src/main/res/layout/activity_mvcmain.xml" value="0.1" />
         <entry key="..\:/dev/etc/book/app/src/main/res/layout/view_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main_mvvm.xml" value="0.5" />
       </map>
     </option>
   </component>
