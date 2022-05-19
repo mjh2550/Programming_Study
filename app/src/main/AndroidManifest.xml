@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Inflean_kotlin">
 
         <activity
-            android:name=".act_intent.MainActActionActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActActionActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,24 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".act_intent.MainActIntentFilterActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActIntentFilterActivity"
             android:exported="false" />
         <activity
-            android:name=".act_intent.MainActIntentDataSecondActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActIntentDataSecondActivity"
             android:exported="false" />
         <activity
-            android:name=".act_intent.MainActIntentDataActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActIntentDataActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".act_intent.MainActIntentSecondActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActIntentSecondActivity"
             android:exported="false" />
         <activity
-            android:name=".act_intent.MainActIntentActivity"
+            android:name="com.mjh.inflean_kotlin.p2_act.intent.MainActIntentActivity"
             android:exported="true" />
         <activity
-            android:name=".act_lifeCycle.MainActLifeCycleActivity"
+            android:name=".p2_act.lifeCycle.MainActLifeCycleActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

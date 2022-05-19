@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".act_intent.MainActIntentDataSecondActivity">
+    tools:context=".p2_act.intent.MainActIntentDataSecondActivity">
 
     <TextView
         android:id="@+id/second_data_textView"

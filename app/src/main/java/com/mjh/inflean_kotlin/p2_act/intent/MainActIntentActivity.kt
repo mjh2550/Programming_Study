@@ -1,6 +1,5 @@
-package com.mjh.inflean_kotlin.act_intent
+package com.mjh.inflean_kotlin.p2_act.intent
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,6 @@ import android.widget.Button
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import com.mjh.inflean_kotlin.R
 

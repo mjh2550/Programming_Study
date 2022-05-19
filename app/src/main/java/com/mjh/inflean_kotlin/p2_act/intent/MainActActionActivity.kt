@@ -1,4 +1,4 @@
-package com.mjh.inflean_kotlin.act_intent
+package com.mjh.inflean_kotlin.p2_act.intent
 
 import android.content.Intent
 import android.net.Uri
@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.mjh.inflean_kotlin.R
-import java.util.jar.Manifest
 
 class MainActActionActivity : AppCompatActivity() {
 

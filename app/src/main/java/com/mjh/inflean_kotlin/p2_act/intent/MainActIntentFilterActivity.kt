@@ -1,4 +1,4 @@
-package com.mjh.inflean_kotlin.act_intent
+package com.mjh.inflean_kotlin.p2_act.intent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
