@@ -76,8 +76,30 @@ class MainActIntentActivity : AppCompatActivity() {
             }
 
 
-
-
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        /**
+         * 메인 액티비티에서 startActivityForResult()로 requestCode 세팅 시
+         * 액티비티 finish() 후
+         * requestcode 받아옴
+         */
+        when(requestCode){
+            0 -> {}
+            1 -> {}
+        }
+
+        /**
+         * 서브 액티비티에서 setResult()로 resultCode 세팅 시
+         * 액티비티 전환 후
+         * resultcode 받아옴
+         */
+        when(resultCode){
+            0 -> {}
+            1 -> {}
+        }
+
+    }
 }
