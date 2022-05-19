@@ -10,21 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Inflean_kotlin">
         <activity
+            android:name=".act_intent.MainActIntentDataSecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".act_intent.MainActIntentDataActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".act_intent.MainActIntentSecondActivity"
             android:exported="false" />
         <activity
             android:name=".act_intent.MainActIntentActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".act_lifeCycle.MainActLifeCycleActivity"
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".act_lifeCycle.MainActLifeCycleActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
