@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.PopupMenu
 import com.mjh.inflean_kotlin.R
-import kotlinx.android.synthetic.main.activity_main_popup_menu.*
+import kotlinx.android.synthetic.main.activity_main_menu_popup_menu.*
 
 class MainPopupMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
