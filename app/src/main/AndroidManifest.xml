@@ -19,20 +19,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Inflean_kotlin">
         <activity
-            android:name=".p3_msg.dialog.MainMsgDialogActivity"
+            android:name=".p3_msg.dialog.MainMsgListDialogActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".p3_msg.dialog.MainMsgDialogActivity"
+            android:exported="true">
 
         </activity>
         <activity
             android:name=".p3_msg.MainMsgToastSnackBarActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".p1_menu.MainPopupMenuActivity"
             android:exported="true" />
@@ -41,7 +43,7 @@
             android:exported="true" />
         <activity
             android:name=".p1_menu.MainPermissionOptionMenuActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".p2_act.lifeCycle.MainActLifeCycleActivity"
             android:exported="false" />
