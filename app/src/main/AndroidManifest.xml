@@ -18,20 +18,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inflean_kotlin">
-        <activity
-            android:name=".p4_thread.MainTnsRunOnUiActivity"
-            android:exported="false" />
-        <activity
-            android:name=".p4_thread.MainTnsRunonuiActivity"
-            android:exported="false" />
-        <activity
-            android:name=".p4_thread.MainTnsThreadHandlerActivity"
+        <receiver
+            android:name=".p4_thread.TestReceiver"
+            android:enabled="true"
             android:exported="true">
+            <intent-filter>
+                <action android:name="com.mjh.inflean_kotlin.receiver"/>
+            </intent-filter>
+
+        </receiver>
+
+        <activity
+            android:name=".p4_thread.MainTnsBroadCastReceiverActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".p4_thread.MainTnsRunOnUiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".p4_thread.MainTnsThreadHandlerActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".p4_thread.MainTnsThreadActivity"
