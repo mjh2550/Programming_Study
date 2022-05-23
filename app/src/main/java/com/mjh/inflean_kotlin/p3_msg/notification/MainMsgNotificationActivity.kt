@@ -154,6 +154,12 @@ class MainMsgNotificationActivity : AppCompatActivity() {
             }
         }
 
+        /**
+         * 23. big picture, long text , inbox notification style
+         * 24. 다자간 notification style
+         * 생략(추후 참고)
+         */
+
 
     }
 
