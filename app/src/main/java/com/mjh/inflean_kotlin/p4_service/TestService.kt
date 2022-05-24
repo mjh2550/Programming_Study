@@ -6,6 +6,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import android.os.SystemClock
@@ -16,9 +17,12 @@ import kotlin.concurrent.thread
 class TestService : Service() {
 
     var isRunning = false
+    var value : Int = 0
+    var binder = LocalBinder()
 
+    //외부에서 서비스에 접속하면 호출되는 메서드
     override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
+        return binder
     }
 
     //서비스 시작 시
@@ -46,11 +50,7 @@ class TestService : Service() {
 
                 //알림 메시지를 foreground 서비스를 위해 표시한다.
                 startForeground(10, notification)
-
             }
-
-
-
         }
 
         isRunning =true
@@ -58,8 +58,9 @@ class TestService : Service() {
         thread {
             while (isRunning){
                 SystemClock.sleep(500)
-                val now = System.currentTimeMillis()
-                Log.d("test","Service : $now")
+//                val now = System.currentTimeMillis()
+                value++
+                Log.d("test","IPCs : $value")
             }
         }
 
@@ -72,4 +73,16 @@ class TestService : Service() {
         Log.d("test","서비스 중지")
         isRunning =false
     }
+
+    fun getNumber() : Int{
+        return value
+    }
+
+    //접속하는 Activity에서 서비스를 추출하기 위해 사용하는 객체
+    inner class LocalBinder : Binder(){
+        fun getService() : TestService{
+            return this@TestService
+        }
+    }
+
 }
