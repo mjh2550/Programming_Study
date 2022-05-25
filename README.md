@@ -1,5 +1,5 @@
 
-# app/kotlin/AAC_codeLab
+# AACCodeLab
 Android Architecture Component CodeLab
 
 https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0
