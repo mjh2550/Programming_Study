@@ -13,6 +13,7 @@ public abstract class WordRoomDataBase : RoomDatabase() {
         @Volatile
         private var INSTANCE : WordRoomDataBase? = null
 
+        //수명주기가 짧은 context를 지양해야함
         fun getDatabase(context : Context): WordRoomDataBase{
 
             return INSTANCE ?: synchronized(this){
