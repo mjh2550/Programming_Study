@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JCExample</string>
+    <string name="title_activity_main_lazy_column">MainLazyColumnActivity</string>
 </resources>

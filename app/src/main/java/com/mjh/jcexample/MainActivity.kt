@@ -38,8 +38,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Scaffold(topBar = {
-        TopAppBar(title = { Text(text = "Hello")},
-            backgroundColor = Color(0xfff25287))}
+        TopAppBar(
+            title = { Text(text = "Hello")},
+            backgroundColor = Color(0xfff25287))
+    }
     ) {
 //        Text(text = "Hello $name!")
         MyComposableView()
