@@ -66,6 +66,8 @@ class BasicRxActivity : AppCompatActivity() {
 
             override fun onNext(t: Int) {
                 Log.d("onNext"," : $t")
+                Log.d("onNext",Thread.currentThread().name)
+
             }
 
             override fun onError(e: Throwable) {
@@ -81,10 +83,13 @@ class BasicRxActivity : AppCompatActivity() {
         //3.Scheduler로 스레드 스코프를 정한다.
         //subscribOn 공급자의 스레드, observeOn 수신자의 스레드
         observable
-//            .subscribeOn(Schedulers.newThread())      //백그라운드 스레드
-            .subscribeOn(Schedulers.io())               //IO 스레드
-            .observeOn(AndroidSchedulers.mainThread()) //메인 스레드
+//            .subscribeOn(Schedulers.newThread())      //백그라운드 스레드 //UI 갱신 작업 시 사용
+//            .subscribeOn(Schedulers.io())               //IO 스레드  //외부 API 호출 시 사용
+//            .observeOn(AndroidSchedulers.mainThread()) //메인 스레드
+            .subscribeOn(AndroidSchedulers.mainThread())
+            .observeOn(Schedulers.io())
             .subscribe(observer)
 
+       observable.unsubscribeOn(Schedulers.io())
     }
 }
