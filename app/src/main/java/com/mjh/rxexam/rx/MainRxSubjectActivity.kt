@@ -40,9 +40,25 @@ class MainRxSubjectActivity : AppCompatActivity() {
 //        behaviorSubject()
 //        asyncSubject()
 //        replaySubject()
-        etcSubject()
+//        etcSubject()
+        testSubject()
 
 
+    }
+
+    private fun testSubject() {
+        val isTestFun = BehaviorSubject.createDefault("testFun")
+        val testVal = BehaviorSubject.createDefault("test")
+        testVal.subscribe(isTestFun)
+        testVal.map {
+            it == "test"
+        }
+            .subscribeBy {
+                isTestFun.onNext("TESTST")
+            }
+
+        Log.d("Test : ",testVal.toString())
+        Log.d("Test : ",isTestFun.toString())
     }
 
     private fun publishSubject() {
