@@ -1,5 +1,6 @@
 package com.mjh.rxexam.rx
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,11 +10,17 @@ import io.reactivex.Observer
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.rxkotlin.toObservable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.schedulers.Schedulers.newThread
+import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.Subject
 import java.util.*
 
 class BasicRxActivity : AppCompatActivity() {
+    @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_rx)
@@ -90,6 +97,52 @@ class BasicRxActivity : AppCompatActivity() {
             .observeOn(Schedulers.io())
             .subscribe(observer)
 
-       observable.unsubscribeOn(Schedulers.io())
+//       observable.unsubscribeOn(Schedulers.io())
+
+        val list = listOf("Alpha", "Beta", "Gamma", "Delta", "Epsilon")
+        list.toObservable()
+            .filter { it.length >= 5 }
+            .subscribeBy(
+                onNext = { println(it) },
+                onError = { it.printStackTrace() },
+                onComplete = { println("Done!") }
+            )
+
+        /**
+         * subject 사용하기
+         * Subject는 Observable과 Observer의 성격을 동시에 가진 Cold Observable이다.(multicast)
+         * Hot Observable은 구독하면 데이터 방출하지만 Cold Observable은 바로 데이터를 방출한다.
+         * RxKotlin의 문법으로 subscribe() 대신 더 편리한 subscribeBy() 문법을 사용한다
+         */
+        var testSubject = BehaviorSubject.createDefault(1)
+        var test2Subject = BehaviorSubject.createDefault(2)
+        var test3Subject = BehaviorSubject.createDefault(3)
+
+        //람다형식
+        testSubject.map { 4 }
+            .filter { it != 0 }
+            .subscribeBy {
+                println("test1 sub $it")//onNext
+                test2Subject.onNext(it)
+            }
+
+        //괄호 형식
+        test2Subject.subscribeBy(
+            onNext = {
+                println("test2 sub $it")
+                test3Subject.onNext(it)
+            },
+            onError = {
+                println("test2 error")
+            },
+            onComplete = {
+                println("test2 sub complete")
+            }
+        )
+
+        test3Subject.subscribeBy{
+            println("test3 sub $it")
+        }
+
     }
 }

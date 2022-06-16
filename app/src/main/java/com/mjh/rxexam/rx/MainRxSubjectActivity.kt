@@ -41,7 +41,21 @@ class MainRxSubjectActivity : AppCompatActivity() {
 //        asyncSubject()
 //        replaySubject()
 //        etcSubject()
-        testSubject()
+//        testSubject()
+        test2Subject()
+
+    }
+
+    private  fun test2Subject(){
+       /* val testSubject = BehaviorSubject.createDefault("default")
+        testSubject.map { it == "default" }
+        testSubject.subscribeBy(
+            onNext = {"next1"}
+            , onComplete = {"onComplete"}
+            , onError = {"onErr"}
+        )*/
+         Observable.just("hello RxJava!")
+            .subscribe(System.out::println)
 
 
     }
