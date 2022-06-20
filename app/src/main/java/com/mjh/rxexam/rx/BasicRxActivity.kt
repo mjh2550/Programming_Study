@@ -118,6 +118,9 @@ class BasicRxActivity : AppCompatActivity() {
         var test2Subject = BehaviorSubject.createDefault(2)
         var test3Subject = BehaviorSubject.createDefault(3)
 
+        var testCSubject = BehaviorSubject.createDefault(4)
+        var testC2Subject = BehaviorSubject.createDefault(5)
+
         //람다형식
         testSubject.map { 4 }
             .filter { it != 0 }
@@ -131,6 +134,8 @@ class BasicRxActivity : AppCompatActivity() {
             onNext = {
                 println("test2 sub $it")
                 test3Subject.onNext(it)
+                testCSubject.onNext(it)
+                testC2Subject.onNext(it)
             },
             onError = {
                 println("test2 error")
@@ -140,8 +145,19 @@ class BasicRxActivity : AppCompatActivity() {
             }
         )
 
+
+        //두 값을 비교할 때는 combineLatest 사용
         test3Subject.subscribeBy{
-            println("test3 sub $it")
+            param -> println("test3 sub $param")
+                Observable.combineLatest(
+                    testCSubject,
+                    testC2Subject
+                ){t1,t2 ->
+                    println("compare t1 t2 : $t1 $t2")
+
+                }.subscribeBy {
+                    println("ok")
+                }
         }
 
     }
