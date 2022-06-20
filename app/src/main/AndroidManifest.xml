@@ -15,10 +15,33 @@
         android:theme="@style/Theme.RxExam"
         tools:targetApi="31" >
         <activity
+            android:name=".fcm.FcmMainActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="test_fcm" />
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_icon"
+                android:resource="@drawable/ic_launcher_background" />
+            <meta-data
+                android:name="com.google.firebase.messaging.default_notification_color"
+                android:resource="@color/material_dynamic_neutral_variant50" />
+        </service>
+
+        <activity
             android:name=".hilt.HiltMainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,7 +52,6 @@
         <activity
             android:name=".rx.BasicRxActivity"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".rx.MainRxSubjectActivity"

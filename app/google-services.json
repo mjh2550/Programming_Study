@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "667868843914",
+    "project_id": "my-fcm-project-89f8f",
+    "storage_bucket": "my-fcm-project-89f8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667868843914:android:741a367f33f35660eb4273",
+        "android_client_info": {
+          "package_name": "com.mjh.rxexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667868843914-3mbmc6giqatl31qb3dfgomk99uv431ir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh1mlQ69lg2HbnLeovzNrEhhFidnqj9Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667868843914-3mbmc6giqatl31qb3dfgomk99uv431ir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
