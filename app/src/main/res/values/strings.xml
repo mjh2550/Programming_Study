@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RxExam</string>
+    <string name="title_activity_jc_main">JcMainActivity</string>
 </resources>

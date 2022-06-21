@@ -3,14 +3,33 @@ package com.mjh.rxexam.rx
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import com.mjh.rxexam.R
-import io.reactivex.subjects.PublishSubject
-import io.reactivex.subjects.Subject
-import kotlinx.android.synthetic.main.activity_calculate.*
-import kotlinx.android.synthetic.main.activity_calculate.view.*
-import java.util.ArrayList
+
 
 class CalculateActivity : AppCompatActivity() ,View.OnClickListener {
+    private lateinit var btn_num_00 : Button
+    private lateinit var btn_num_01 : Button
+    private lateinit var btn_num_02 : Button
+    private lateinit var btn_num_03 : Button
+    private lateinit var btn_num_04 : Button
+    private lateinit var btn_num_05 : Button
+    private lateinit var btn_num_06 : Button
+    private lateinit var btn_num_07 : Button
+    private lateinit var btn_num_08 : Button
+    private lateinit var btn_num_09 : Button
+    private lateinit var btn_calc_multi : Button
+    private lateinit var btn_calc_division : Button
+    private lateinit var btn_calc_minus : Button
+    private lateinit var btn_calc_plus : Button
+    private lateinit var btn_calc_c : Button
+    private lateinit var btn_calc_result : Button
+    private lateinit var tv_num : TextView
+    private lateinit var tv_num_result : TextView
+    private lateinit var tv_num_operator : TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate)
@@ -20,6 +39,26 @@ class CalculateActivity : AppCompatActivity() ,View.OnClickListener {
     }
 
     private fun initBinding(){
+        btn_num_00 = findViewById(R.id.btn_num_00)
+        btn_num_01 = findViewById(R.id.btn_num_01)
+        btn_num_02 = findViewById(R.id.btn_num_02)
+        btn_num_03 = findViewById(R.id.btn_num_03)
+        btn_num_04 = findViewById(R.id.btn_num_04)
+        btn_num_05 = findViewById(R.id.btn_num_05)
+        btn_num_06 = findViewById(R.id.btn_num_06)
+        btn_num_07 = findViewById(R.id.btn_num_07)
+        btn_num_08 = findViewById(R.id.btn_num_08)
+        btn_num_09 = findViewById(R.id.btn_num_09)
+        btn_calc_multi  = findViewById(R.id.btn_calc_multi)
+        btn_calc_division = findViewById(R.id.btn_calc_division)
+        btn_calc_minus  = findViewById(R.id.btn_calc_minus)
+        btn_calc_plus  = findViewById(R.id.btn_calc_plus)
+        btn_calc_c  = findViewById(R.id.btn_calc_c)
+        btn_calc_result  = findViewById(R.id.btn_calc_result)
+        tv_num = findViewById(R.id.tv_num)
+        tv_num_result = findViewById(R.id.tv_num_result)
+        tv_num_operator = findViewById(R.id.tv_num_operator)
+
         btn_num_00.setOnClickListener(this)
         btn_num_01.setOnClickListener(this)
         btn_num_02.setOnClickListener(this)
