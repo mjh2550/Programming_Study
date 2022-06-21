@@ -17,18 +17,20 @@
         android:theme="@style/Theme.RxExam"
         tools:targetApi="31">
         <activity
-            android:name=".JcMainActivity"
-            android:exported="false"
+            android:name=".compose.JcMainActivity"
+            android:exported="true"
             android:label="@string/title_activity_jc_main"
-            android:theme="@style/Theme.RxExam" />
-        <activity
-            android:name=".fcm.FcmMainActivity"
-            android:exported="true">
+            android:theme="@style/Theme.RxExam" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".fcm.FcmMainActivity"
+            android:exported="true">
         </activity>
 
         <service
