@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/tv_01"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="TextView"
@@ -17,11 +17,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_01"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_02"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="알람보내기"
+        android:text="토큰받기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_01" />
