@@ -18,7 +18,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mjh.rxexam.compose.ui.theme.RxExamTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class JcListViewActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
