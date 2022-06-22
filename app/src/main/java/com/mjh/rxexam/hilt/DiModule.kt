@@ -8,11 +8,11 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
-@Module
+//@InstallIn(SingletonComponent::class)
+//@Module
 object DiModule {
 
-    @Singleton
+   /* @Singleton
     @Provides
     fun providesStrFun():String{
         return "providesStrFun"
@@ -23,13 +23,13 @@ object DiModule {
     fun providesClass() = Data()
 
 
-/*
+*//*
     @Singleton
     @Provides
-    fun providesClassWithParam() = Data2()*/
+    fun providesClassWithParam() = Data2()*//*
 
     @Singleton
     @Provides
-    fun providesRepository() = HiltRepository()
+    fun providesRepository() = HiltRepository()*/
 
 }

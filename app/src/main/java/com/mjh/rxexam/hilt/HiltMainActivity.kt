@@ -15,10 +15,10 @@ import javax.inject.Named
 class HiltMainActivity  : AppCompatActivity() {
 
 
-    @Inject lateinit var prStr : String
-    @Inject lateinit var data: Data
-    @Inject lateinit var data2 : Data2
-    @Inject lateinit var repository: HiltRepository
+//    @Inject lateinit var prStr : String
+//    @Inject lateinit var data: Data
+//    @Inject lateinit var data2 : Data2
+//    @Inject lateinit var repository: HiltRepository
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,12 +38,12 @@ class HiltMainActivity  : AppCompatActivity() {
          *
          */
 
-        data.set(33333) //데이터를 주입할 수 있지만, 객체지향 원칙에 어긋난다.(의존역전원칙)
+//        data.set(33333) //데이터를 주입할 수 있지만, 객체지향 원칙에 어긋난다.(의존역전원칙)
 
-        println("prStr : $prStr")
-        println("prData : ${data.getData()}")
-//        println("prData2 : ${data2.getData2()}")
-        println("prData3 : ${data2.test()}")
+//        println("prStr : $prStr")
+//        println("prData : ${data.getData()}")
+////        println("prData2 : ${data2.getData2()}")
+//        println("prData3 : ${data2.test()}")
 
 
     }
