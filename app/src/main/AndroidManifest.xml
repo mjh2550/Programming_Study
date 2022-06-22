@@ -17,21 +17,24 @@
         android:theme="@style/Theme.RxExam"
         tools:targetApi="31">
         <activity
+            android:name=".JcListViewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_jc_list_view"
+            android:theme="@style/Theme.RxExam" />
+        <activity
             android:name=".compose.JcMainActivity"
             android:exported="true"
             android:label="@string/title_activity_jc_main"
-            android:theme="@style/Theme.RxExam" >
+            android:theme="@style/Theme.RxExam">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".fcm.FcmMainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
 
         <service
             android:name=".fcm.MyFirebaseMessagingService"
@@ -53,16 +56,16 @@
 
         <activity
             android:name=".hilt.HiltMainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".rx.CalculateActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".rx.BasicRxActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".rx.MainRxSubjectActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

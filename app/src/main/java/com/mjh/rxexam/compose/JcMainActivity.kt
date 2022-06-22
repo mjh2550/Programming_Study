@@ -35,7 +35,7 @@ class JcMainActivity : ComponentActivity() {
                 *
                 */
 
-                testComposable(str = "test3333",)
+                testComposable(str = "test3333")
             }
         }
     }

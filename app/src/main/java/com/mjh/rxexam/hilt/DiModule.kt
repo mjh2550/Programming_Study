@@ -4,15 +4,16 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.scopes.ActivityScoped
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 import javax.inject.Singleton
 
-//@InstallIn(SingletonComponent::class)
-//@Module
+@InstallIn(SingletonComponent::class)
+@Module
 object DiModule {
 
-   /* @Singleton
+    @Singleton
     @Provides
     fun providesStrFun():String{
         return "providesStrFun"
@@ -23,13 +24,13 @@ object DiModule {
     fun providesClass() = Data()
 
 
-*//*
-    @Singleton
+/*
+    @ActivityScoped
     @Provides
-    fun providesClassWithParam() = Data2()*//*
+    fun providesClassWithParam() = Data2()*/
 
     @Singleton
     @Provides
-    fun providesRepository() = HiltRepository()*/
+    fun providesRepository() = HiltRepository()
 
 }
