@@ -2,4 +2,5 @@
     <string name="app_name">RxExam</string>
     <string name="title_activity_jc_main">JcMainActivity</string>
     <string name="title_activity_jc_list_view">JcListViewActivity</string>
+    <string name="title_activity_bio_one">BioOneActivity</string>
 </resources>

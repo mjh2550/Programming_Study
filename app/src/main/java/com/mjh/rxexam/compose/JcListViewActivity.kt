@@ -1,5 +1,6 @@
 package com.mjh.rxexam.compose
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,14 +8,14 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.currentCompositionLocalContext
+import androidx.compose.runtime.rememberCompositionContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mjh.rxexam.compose.ui.theme.RxExamTheme
@@ -32,6 +33,8 @@ class JcListViewActivity : ComponentActivity() {
 
 @Composable
 fun jcListView(){
+    val context = LocalContext.current
+
     RxExamTheme {
         //LazyColumn은 화면에 보여지는 컴포저블만을 표시하는 scrollable한 column
         LazyColumn(){
@@ -47,7 +50,29 @@ fun jcListView(){
                 listOf(100,200,300) //아이템 여러개생성
             ){ index, item ->
                 jcCard(order = item) //아이템 기반으로 컴포저블 생성
-                jcCard(order = index) //아이템 기반으로 컴포저블 생성
+//                jcCard(order = index) //아이템 기반으로 컴포저블 생성
+            }
+            item {
+                Button(onClick = {
+                    val intent = Intent(context,BioOneActivity::class.java)
+                    context.startActivity(intent)
+                },
+                modifier = Modifier
+                    .padding(10.dp)
+                    .fillMaxWidth()
+                    
+                ) {
+                    Row(
+                        Modifier
+//                            .defaultMinSize()
+                            .padding(10.dp),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "Intent Activity")
+                    }
+
+                }
             }
         }
     }
