@@ -49,7 +49,10 @@ class RxMainOneActivity : AppCompatActivity() {
         mBinding.editTextTextPersonName.doAfterTextChanged {
             Log.d("changed","$it")
             subject.onNext(it.toString())
+
+            //두개가 같은 결과
             mBinding.tvRx01.text = viewData.value
+//          mBinding.tvRx01.text = "$it"
         }
 
         mBinding.btnRx01.setOnClickListener {
