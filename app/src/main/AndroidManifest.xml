@@ -18,13 +18,20 @@
         android:theme="@style/Theme.RxExam"
         tools:targetApi="31">
         <activity
-            android:name=".compose.BioActivity"
+            android:name=".rx.RxMainOneActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".compose.BioActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".compose.BioOneActivity"
@@ -35,14 +42,14 @@
             android:name=".compose.JcListViewActivity"
             android:exported="true"
             android:label="@string/title_activity_jc_list_view"
-            android:theme="@style/Theme.RxExam">
-
-        </activity>
+            android:theme="@style/Theme.RxExam"></activity>
         <activity
             android:name=".compose.JcMainActivity"
             android:exported="true"
             android:label="@string/title_activity_jc_main"
-            android:theme="@style/Theme.RxExam" />
+            android:theme="@style/Theme.RxExam" >
+
+        </activity>
         <activity
             android:name=".fcm.FcmMainActivity"
             android:exported="true" />

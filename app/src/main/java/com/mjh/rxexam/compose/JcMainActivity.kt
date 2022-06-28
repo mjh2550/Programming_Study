@@ -23,6 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.mjh.rxexam.compose.ui.theme.RxExamTheme
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.Subject
 
 @AndroidEntryPoint
 class JcMainActivity : ComponentActivity() {
@@ -45,19 +48,37 @@ class JcMainActivity : ComponentActivity() {
 fun testComposable(str:String,viewModel: JcViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
 
     val context = LocalContext.current
+
+    //view의 변수
+    val viewData = remember { mutableStateOf("")}
+
+    //값이 전달되는 파이프라인
+    val subject : Subject<String> = PublishSubject.create()
+
+    //binding
+    subject.subscribeBy { viewData.value = it }
+
+    Column() {
+        TextField(value = viewData.value, onValueChange =
+        { Log.d("test","onChanged : $it")
+            subject.onNext(it) })
+
+        Text(text = viewData.value)
+    }
+
     /**
      * State 패턴
      * State를 선언한 후 메서드를 통해 Handle한다.
      * 기본적으로 Readable(읽기전용) 이며, MutableState를 선언해서 변경한다.
      */
 
-    val _s1 = remember { mutableStateOf(str)}
+    /*val _s1 = remember { mutableStateOf(str)}
     val s1 : State<String> =_s1
 
     TextField(value = s1.value, onValueChange =
     { Log.d("test","onChanged : $it")
        _s1.value=it })
-    val testVal = viewModel.printTest()
+    val testVal = viewModel.printTest()*/
 
 //    TextField(value =testVal, onValueChange ={Log.d("onChange","change : $it")} )
 
