@@ -69,6 +69,11 @@ class GameFragment : Fragment() {
         mViewmodel.score.observe(viewLifecycleOwner){
             binding.score.text = String.format("Score: %s",mViewmodel.score.value.toString())
         }
+
+        mViewmodel.currentWordCount.observe(viewLifecycleOwner){
+            binding.wordCount.text = String.format("%s of %d words",mViewmodel.currentWordCount.value.toString(),
+                MAX_NO_OF_WORDS)
+        }
     }
 
     /*
